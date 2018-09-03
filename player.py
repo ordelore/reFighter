@@ -1,12 +1,12 @@
-import pygame
+import pygame, os
 class player:
 	def __init__(self, positionTuple, scale):
 		self.positionX = positionTuple[0]
 		self.positionY = positionTuple[1]
 		self.lives = 3
 		self.isRed = True
-		self.redSprite = pygame.image.load("sprites\\fighterRed.png")
-		self.blueSprite = pygame.image.load("sprites\\fighterBlue.png")
+		self.redSprite = pygame.image.load(os.path.join("sprites", "fighterRed.png"))
+		self.blueSprite = pygame.image.load(os.path.join("sprites", "fighterBlue.png"))
 		#resize sprite to fit the scale
 		#assumption: red&blue ships are the same size
 		newSize = tuple([scale*x for x in self.redSprite.get_size()])

@@ -1,5 +1,6 @@
 import pygame, math, random, bullet, player
 from numpy import linspace
+import os
 class enemy:
 	def __init__(self, positionTuple, isRed, firingPattern, frequency, velocity, angle, screenDimensions, scale):
 		self.position = positionTuple
@@ -39,9 +40,9 @@ class enemy:
 		self.angleSpread = math.radians(self.angleSpread)
 		#color sprite
 		if isRed:
-			self.sprite = pygame.image.load("sprites\\enemyRed.png")
+			self.sprite = pygame.image.load(os.path.join("sprites", "enemyRed.png"))
 		else:
-			self.sprite = pygame.image.load("sprites\\enemyBlue.png")
+			self.sprite = pygame.image.load(os.path.join("sprites", "enemyBlue.png"))
 		#resize sprite to fit the scale
 		newSize = tuple([scale*x for x in self.sprite.get_size()])
 		self.sprite = pygame.transform.scale(self.sprite, newSize)
