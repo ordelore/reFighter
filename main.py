@@ -23,6 +23,7 @@
 #  
 import pygame, sys, util, bullet, math, player, reflect, enemy, random
 import pygame.font
+import os
 def main(args):
 	pygame.init()
 	pygame.font.init()
@@ -36,8 +37,8 @@ def main(args):
 	needToDrawMainMenu = True
 	previousFrameTime = 0
 	timeBetweenFrames = 16
-	gameNameFont = pygame.font.Font("fonts\\pcsenior.ttf", 10 * scale)
-	gameInfoFont = pygame.font.Font("fonts\\pcsenior.ttf", 5 * scale)
+	gameNameFont = pygame.font.Font(os.path.join("fonts", "pcsenior.ttf"), 10 * scale)
+	gameInfoFont = pygame.font.Font(os.path.join("fonts", "pcsenior.ttf"), 5 * scale)
 	hasChangedColor = False
 	dangerDisplayed = False
 	dangerMessageTickLength = 500
