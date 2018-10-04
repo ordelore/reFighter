@@ -95,7 +95,8 @@ def main(args):
 				mainCharacter.move(scale * -2, gameScreen)
 			if keys[pygame.K_RIGHT]:
 				mainCharacter.move(scale * 2, gameScreen)
-			
+			if not(keys[pygame.K_LEFT] or keys[pygame.K_RIGHT]):
+				mainCharacter.forward()
 			#changing the color of the ship and making sure it doesn't change too quickly
 			if keys[pygame.K_z] and not(hasChangedColor):
 				mainCharacter.changeColor()
