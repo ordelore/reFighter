@@ -32,13 +32,13 @@ def main(args):
 	scale = 2
 	
 	#320x240 resolution CAN BE CHANGED
-	size = (scale * 320,scale * 240)
+	size = (int(scale * 320),int(scale * 240))
 	isMainMenu = True
 	needToDrawMainMenu = True
 	previousFrameTime = 0
 	timeBetweenFrames = 16
-	gameNameFont = pygame.font.Font(os.path.join("fonts", "pcsenior.ttf"), 10 * scale)
-	gameInfoFont = pygame.font.Font(os.path.join("fonts", "pcsenior.ttf"), 5 * scale)
+	gameNameFont = pygame.font.Font(os.path.join("fonts", "pcsenior.ttf"), int(10 * scale))
+	gameInfoFont = pygame.font.Font(os.path.join("fonts", "pcsenior.ttf"), int(5 * scale))
 	hasChangedColor = False
 	dangerDisplayed = False
 	dangerMessageTickLength = 500
